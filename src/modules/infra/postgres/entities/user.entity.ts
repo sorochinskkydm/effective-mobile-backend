@@ -24,13 +24,13 @@ export class UserEntity {
     @Column({ unique: true })
     email: string;
 
-    @Column()
+    @Column({ select: false })
     password: string;
 
     @Column({ type: 'enum', enum: RoleEnum })
     role: RoleEnum;
 
-    @Column()
+    @Column({ default: true })
     isActive: boolean;
 
     @CreateDateColumn()

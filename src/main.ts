@@ -1,3 +1,4 @@
+import { apiRoutes } from '@api/routes';
 import { env } from '@infra/config';
 import { AppDataSource } from '@infra/postgres/typeorm.config';
 import * as express from 'express';
@@ -5,6 +6,8 @@ import helmet from 'helmet';
 const app = express();
 app.use(express.json());
 app.use(helmet());
+
+app.use('/', apiRoutes);
 
 const start = async () => {
     try {
