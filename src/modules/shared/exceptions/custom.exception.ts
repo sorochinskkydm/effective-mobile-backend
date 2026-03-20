@@ -12,7 +12,13 @@ export class AlreadyExistsException extends CustomException {
 
 export class UnauthorizedException extends CustomException {
     constructor() {
-        super('Unouthorized', 401);
+        super('Unauthorized', 401);
+    }
+}
+
+export class ForbiddenException extends CustomException {
+    constructor() {
+        super('Forbidden', 403);
     }
 }
 
